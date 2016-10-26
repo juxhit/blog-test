@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div>
+        <h1>Пользователи</h1>
+        <%= link_to "добавить", new_user_path, class: "btn btn-xs btn-primary", style: "margin-bottom: 10px;" %>
+    </div>
+    <div style="clear: left;">
+      <table class="table">
+          <tr>
+            <th>Никнейм</th>
+            <th>Электронная почта</th
+          </tr>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= link_to user.nickname, user %></td>
+            <td><%= mail_to user.email %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

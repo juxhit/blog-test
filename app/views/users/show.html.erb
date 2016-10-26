@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div>
+      <h1><%= @user.nickname %></h1>
+      <%= link_to "изменить", edit_user_path, class: "btn btn-xs btn-default", style: "margin-bottom: 10px;" %>
+    </div>
+    <div style="clear: left;">
+      <div class="row">
+        <div class="col-xs-6">
+          <h3>Контактные данные:</h3>
+          <div class="form-group">
+            <div>Эл.почта:</div>
+            <div><%= mail_to @user.email %></div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <%= image_tag @user.avatar.url(:medium) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

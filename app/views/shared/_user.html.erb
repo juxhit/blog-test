@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="pull-left">
+      <%= link_to "блоги", '/' %>
+      <%= link_to "пользователи", users_path %>
+    </div>
+    <div class="pull-right">
+      <% if current_user %>
+        Привет, <b><%= current_user.nickname %></b>! | <%= link_to "выйти", '/logout' %>
+      <% else %>
+        <%= link_to 'войти', '/login' %> | <%= link_to 'зарегистрироваться', '/signup' %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <h1>Регистрация:</h1>
+    <%= form_tag users_path do %>
+      <div class="form-group">
+        <%= label_tag "Никнейм:" %>
+        <%= text_field_tag :nickname, "", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag "Эл. почта:" %>
+        <%= text_field_tag :email, "", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag "Пароль:" %>
+        <%= password_field_tag :password, "", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag "Подтвердить пароль:" %>
+        <%= password_field_tag :password_confirmation, "", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= submit_tag "добавить", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

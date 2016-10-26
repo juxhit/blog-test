@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div>
+      <h1>Тест блог</h1>
+      <%= link_to "создать", new_post_path, class: "btn btn-xs btn-primary", style: "margin-bottom: 10px;" %>
+    </div>
+    <div style="clear: left;">
+      <% @posts.each do |post| %>
+        <div>
+          <h2 id="post"><%= post.title %></h2>
+          <div class="row">
+            <div class="col-xs-12" style="max-height:100px;overflow:hidden;">
+              <%= post.body %>
+            </div>
+          </div>
+          <div>
+            <%= link_to "открыть...", post, class: "btn btn-xs btn-default" %>
+            <span style="margin: 0 0 10px 10px;position: absolute;">
+              Автор: <%= link_to post.author.nickname, post.author %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div style="padding:0 0 20px;"><%= paginate @posts %></div>
+  </div>
+</div>
