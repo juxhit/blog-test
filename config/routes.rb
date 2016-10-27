@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   get '/api/v1/posts/:id' => 'posts#show', :defaults => { :format => 'json' }
   get '/api/v1/posts' => 'posts#index', :defaults => { :format => 'json' }
 
-  post 'api/v1/reports/by_author' => 'users#index', :defaults => { :format => 'json' }
+  post 'api/v1/reports/by_author' => 'users#report', :defaults => { :format => 'json' }
 
 end
